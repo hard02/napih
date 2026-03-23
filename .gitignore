@@ -1,0 +1,19 @@
+# Backend
+napih-server/target/
+napih-server/.mvn/
+*.class
+*.jar
+
+# Frontend
+napih-client/node_modules/
+napih-client/dist/
+napih-client/.angular/
+
+# Environment
+.env
+*.env.local
+
+# IDE
+.idea/
+*.iml
+.vscode/
