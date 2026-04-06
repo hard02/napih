@@ -1,6 +1,10 @@
 package napih_server.service;
 
 import org.springframework.stereotype.Service;
+
+import napih_server.dto.request.RegisterApiRequest;
+import napih_server.dto.request.UpdateApiRequest;
+import napih_server.dto.response.ApiEndpointResponse;
 import napih_server.model.ApiEndpoint;
 import napih_server.repository.ApiEndpointRepository;
 

@@ -1,10 +1,16 @@
 package napih_server.controller;
 
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import napih_server.model.ApiEndpoint;
 import napih_server.service.ApiEndpointService;
+import napih_server.dto.response.ApiEndpointResponse;
+import napih_server.dto.request.RegisterApiRequest;
+import napih_server.dto.request.UpdateApiRequest;
+
+
 
 import java.util.List;
 
@@ -20,11 +26,10 @@ public class ApiEndpointController {
 
     // CREATE (Register API)
     @PostMapping
-    public ResponseEntity<ApiEndpointResponse> create(
-            @RequestBody RegisterApiRequest request) {
+    public ResponseEntity<ApiEndpointResponse> create(@RequestBody RegisterApiRequest request) {
 
         ApiEndpointResponse response = service.create(request);
-        return ResponseEntity.ok(response); // 200 OK as you wanted
+        return new ResponseEntity<>(response, HttpStatusCode.valueOf(200)); // 200 OK as you wanted
     }
 
     // READ ALL (Paginated later)
